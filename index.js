@@ -94,7 +94,7 @@ client.connect((err) => {
     servicesCollection.find({})
     .toArray((err, documents) => {
       res.send(documents);
-      // console.log(documents);
+      console.log(documents);
     });
   });
 
