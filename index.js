@@ -93,8 +93,7 @@ client.connect((err) => {
   app.get("/services", (req, res) => {
     servicesCollection.find({})
     .toArray((err, documents) => {
-      res.send(documents);
-      console.log(documents);
+      res.send(documents);   
     });
   });
 
@@ -106,7 +105,6 @@ client.connect((err) => {
       res.send(result.insertedCount > 0)
     })
   })
-
 
   //Review
 
@@ -132,8 +130,6 @@ client.connect((err) => {
     })
   })
 
-
-
   //admin
   
   app.post("/addAdmin", (req, res) => {
@@ -146,7 +142,6 @@ client.connect((err) => {
   });
 
   app.get('/checkAdmin', (req, res) => { 
-    // console.log(req.query.email)
     adminCollection.find({email: req.query.email})      
     .toArray((err, documents) => {
       res.send(documents.length > 0);
@@ -158,7 +153,6 @@ client.connect((err) => {
     orderCollection.find({})
     .toArray((err, documents) => {
       res.send(documents);
-      // console.log(documents);
     });
   });
 
